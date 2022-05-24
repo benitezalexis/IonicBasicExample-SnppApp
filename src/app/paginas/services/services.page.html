@@ -1,0 +1,40 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Servicios</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-slides pager="true" class="slide-full">
+
+    <ion-slide *ngFor="let slide of slides">
+
+      <ion-card mode="ios">
+
+        <img [src]="slide.img" style="width: 200px;" class="slide-image">
+
+        <ion-card-header>
+          <ion-card-title> {{ slide.titulo }} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{ slide.desc }}
+        </ion-card-content>
+
+      </ion-card>
+
+    </ion-slide>
+
+    <ion-slide>
+      <ion-button expand="full"
+                  color="primary"
+                  fill="clear"
+                  (click)="onClick()">
+        INICIO
+      </ion-button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>
